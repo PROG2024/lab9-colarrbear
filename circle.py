@@ -3,6 +3,15 @@ import math
 
 
 class Circle:
+    """ # Doctests for Circle
+    >>> circ1 = Circle(3)
+    >>> circ2 = Circle(4)
+    >>> circ3 = circ1.add_area(circ2)
+    >>> circ3.get_radius()
+    5.0
+    >>> circ3.get_area()
+    78.53981633974483
+    """
 
     def __init__(self, radius):
         """Initialize a circle with given radius.

@@ -16,8 +16,8 @@ class CircleTest(unittest.TestCase):
 
     def setUp(self):
         """Create a circle before each test."""
-        self.circle = Circle(1)
-        self.circle2 = Circle(10)
+        self.circle = Circle(3)
+        self.circle2 = Circle(4)
 
     def test_add_area_typical_values(self):
         """
@@ -25,7 +25,7 @@ class CircleTest(unittest.TestCase):
         Test add_area with two circles having positive radii.
         """
         result = self.circle.add_area(self.circle2)
-        self.assertEqual(result.get_radius(), 10.04987562112089)
+        self.assertEqual(result.get_radius(), 5)
 
     def test_add_area_for_radius_zero(self):  # edge case
         """
@@ -38,7 +38,7 @@ class CircleTest(unittest.TestCase):
         """
         self.circle_zero = Circle(0)
         result = self.circle.add_area(self.circle_zero)
-        self.assertEqual(result.get_radius(), 1)
+        self.assertEqual(result.get_radius(), 3)
 
     def test_negative_radius(self):
         """Circle constructor raises exception if the radius is negative."""
