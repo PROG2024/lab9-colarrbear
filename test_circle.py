@@ -42,6 +42,6 @@ class CircleTest(unittest.TestCase):
 
     def test_negative_radius(self):
         """Circle constructor raises exception if the radius is negative."""
+        self.neg_circle = Circle(-1)
         with self.assertRaises(ValueError):
-            self.neg_circle = Circle(-1)
             self.neg_circle.get_radius()
