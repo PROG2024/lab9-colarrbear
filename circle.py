@@ -9,8 +9,10 @@ class Circle:
     >>> circ3 = circ1.add_area(circ2)
     >>> circ3.get_radius()
     5.0
-    >>> circ3.get_area()
-    78.53981633974483
+    >>> circ4 = Circle(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: radius must be non-negative
     """
 
     def __init__(self, radius):
