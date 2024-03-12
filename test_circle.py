@@ -24,7 +24,6 @@ class CircleTest(unittest.TestCase):
         Typical case:
         Test add_area with two circles having positive radii.
         """
-
         result = self.circle.add_area(self.circle2)
         self.assertEqual(result.get_radius(), 10.04987562112089)
 
@@ -37,9 +36,12 @@ class CircleTest(unittest.TestCase):
         Does add_area work the same regardless of
         which circle has radius 0?
         """
-
         self.circle_zero = Circle(0)
         result = self.circle.add_area(self.circle_zero)
         self.assertEqual(result.get_radius(), 1)
 
-
+    def test_negative_radius(self):
+        """Circle constructor raises exception if the radius is negative."""
+        with self.assertRaises(ValueError):
+            self.neg_circle = Circle(-1)
+            self.neg_circle.get_radius()
