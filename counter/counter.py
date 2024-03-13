@@ -16,7 +16,7 @@ class Counter:
 
     def __init__(self):
         if self._check is None:
-            self.__count = 0
+            self.__count = 1
             Counter._check = self
 
     def __str__(self):

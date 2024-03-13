@@ -20,7 +20,7 @@ class CounterTest(unittest.TestCase):
 
     def test_counter(self):
         # self.assertEqual(self.c1.count, self.c2.count)
-        self.c1.increment()
+        # self.c1.increment()
         self.assertEqual(self.c1.count, 1)
         self.c1.increment()
         self.assertEqual(self.c1.count, 2)
