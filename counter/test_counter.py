@@ -7,3 +7,20 @@
 
    You can use pytest or unittest.
 """
+import unittest
+from counter import Counter
+
+
+class CounterTest(unittest.TestCase):
+    """Tests of the Counter class."""
+    def setUp(self):
+        """Create a circle before each test."""
+        self.c1 = Counter()
+        # self.c2 = Counter()
+
+    def test_counter(self):
+        # self.assertEqual(self.c1.count, self.c2.count)
+        self.c1.increment()
+        self.assertEqual(self.c1.count, 1)
+        self.c1.increment()
+        self.assertEqual(self.c1.count, 2)
