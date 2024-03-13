@@ -16,11 +16,17 @@ class CounterTest(unittest.TestCase):
     def setUp(self):
         """Create a circle before each test."""
         self.c1 = Counter()
-        # self.c2 = Counter()
+        self.c2 = Counter()
 
     def test_counter(self):
-        # self.assertEqual(self.c1.count, self.c2.count)
+        self.assertEqual(self.c1.count, 1)
         # self.c1.increment()
         self.assertEqual(self.c1.count, 1)
+
+    def test_cant_multiple_instance(self):
+        self.assertEqual(self.c1, self.c2)
         self.c1.increment()
         self.assertEqual(self.c1.count, 2)
+
+    def test_is_singleton(self):
+        self.assertEqual(self.c1, self.c2)
