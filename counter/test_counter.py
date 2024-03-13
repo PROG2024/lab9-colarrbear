@@ -18,13 +18,18 @@ class CounterTest(unittest.TestCase):
         self.c1 = Counter()
         self.c2 = Counter()
 
-    def test_counter(self):
-        """Test that Counter is a singleton."""
-        self.assertEqual(self.c1, self.c2)
+    def test_counter_increment(self):
+        """Test that counter is count correctly."""
         self.c1.increment()
         self.assertEqual(self.c1.count, 2)
         self.assertEqual(self.c2.count, 2)
 
     def test_is_singleton(self):
         """Test that Counter is a singleton."""
-        self.assertEqual(self.c1, self.c2)
+        self.assertIs(self.c1, self.c2)
+
+    def test_count_not_reset(self):
+        """Test that count is not reset to 0 when you invoke count = Counter() after the first time."""
+        initial_count = self.c1.count
+        new_counter = Counter()
+        self.assertIs(new_counter.count, initial_count)
