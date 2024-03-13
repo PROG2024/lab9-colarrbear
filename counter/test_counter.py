@@ -19,14 +19,12 @@ class CounterTest(unittest.TestCase):
         self.c2 = Counter()
 
     def test_counter(self):
-        self.assertEqual(self.c1.count, 1)
-        # self.c1.increment()
-        self.assertEqual(self.c1.count, 1)
-
-    def test_cant_multiple_instance(self):
+        """Test that Counter is a singleton."""
         self.assertEqual(self.c1, self.c2)
         self.c1.increment()
         self.assertEqual(self.c1.count, 2)
+        self.assertEqual(self.c2.count, 2)
 
     def test_is_singleton(self):
+        """Test that Counter is a singleton."""
         self.assertEqual(self.c1, self.c2)
